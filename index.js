@@ -5,6 +5,7 @@ const puerto = 5500;
 app.use(express.json());
 
 app.use('/products', require('./routes/products'));
+app.use('/categories',require('./routes/categories'));
 
 app.listen(puerto, ()=> console.log('Servidor levantado en el puerto: ',puerto));
 
