@@ -7,6 +7,7 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 * Crea la tabla Products ✅
 
  __Productos__
+ 
 · CRUD productos: ✅
 
 · El endpoint de traer productos debe mostrarse junto a la categoría o categorías que pertenece: ✅
@@ -22,6 +23,7 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 · Implementa validación a la hora de crear un producto para que se rellene todos los campos y si no se hace que devuelva un mensaje: ✅
 
  __Categorías__
+ 
 · CRUD Categorías: ✅
 
 · El endpoint para ver todas las categorías junto a los productos que tienen: ✅
@@ -31,11 +33,13 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 · Filtro para buscar categoría por nombre: ✅
 
   __Pedidos__
+  
 · Crea un endpoint para ver los pedidos junto a los productos que tienen: ✅
 
 · Crea un endpoint para crear pedidos: ✅
 
  __Usuarios__
+ 
 · Endpoint para registrar un usuario utilizando bcrypt: ✅
 
 · Endpoint para login(utilizando bcrypt +JWT): ✅
