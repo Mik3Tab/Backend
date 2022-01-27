@@ -4,8 +4,6 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 
 # Ejercicios
 
-* Crea la tabla Products ✅
-
  __Productos__
  
 · CRUD productos: ✅
