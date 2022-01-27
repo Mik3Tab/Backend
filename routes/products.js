@@ -8,5 +8,7 @@ router.get('/',ProductController.getAll);
 router.get('/getById/:id',ProductController.getById);
 router.put('/update/:id', ProductController.update);
 router.delete('/delete/:id',ProductController.delete);
-
+router.get('/getByName/:name',ProductController.getOneByName);
+router.get('/getByPrice/:price', ProductController.getAllByPrice);
+router.get('/getByPriceOrder', ProductController.getAllOrder);
 module.exports = router;

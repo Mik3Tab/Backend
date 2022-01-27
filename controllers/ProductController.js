@@ -1,4 +1,5 @@
-const {Product} = require('../models/index');
+const {Product, Category, Sequelize} = require('../models/index');
+const { Op } = Sequelize;
 
 const ProductController = {
     insert(req,res){
@@ -60,7 +61,45 @@ const ProductController = {
                 console.error(err)
                 res.status(500).send({message: 'Ha habido un problema al eliminar el producto.'});
             }
-        }
+        }, getOneByName(req,res){
+            Product.findOne({
+                where: {
+                    name: {
+                        [Op.like]: `%${req.params.name}`
+                    }
+                }
+            }).then(product => res.send(product))
+            .catch(err =>{
+                console.error(err)
+                res.status(500).send({message: 'No se ha podido cargar el producto por su nombre'})
+            })
+        }, getAllByPrice(req,res){
+            Product.findAll({
+                where: {
+                    price: {
+                        [Op.like]: `${req.params.price}`
+                    }
+                }
+            })
+            .then(product => res.send(product))
+            .catch(err=>{
+                console.error(err)
+                res.status(500).send({message: 'No se ha podido cargar el producto por su precio'})
+            })
+        }, getAllOrder(req,res){
+            Product.findAll({
+                include:[{model: Category, as: 'categories', through: {attributes: []}}],
+                order: [
+                    ['price', 'DESC']
+                ]
+            })
+            .then(products => res.send(products))
+            .catch(err=>{
+                console.error(err)
+                res.status(500).send({message: 'Ha habido un problema al cargar los productos ordenados por precio'})
+            })
+        },
+        
 }
 
 module.exports = ProductController;
