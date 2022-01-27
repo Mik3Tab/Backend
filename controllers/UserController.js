@@ -1,8 +1,8 @@
-const {Product, Category, Sequelize, Token, User} = require('../models/index.js');
-const express = require('express');
+const {Product, Sequelize, Token, User, Order} = require('../models/index.js');
 const jwt = require('jsonwebtoken');
 const {jwt_secret} = require('../config/config.json')['development'];
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const {Op} = Sequelize;
 const UserController = {
     async register(req, res) {
         try {
@@ -48,6 +48,33 @@ const UserController = {
         } catch (error) {
             console.error(error);
             res.status(500).send({message:"Ha habido un problema al intentar hacer el login"})
+        }
+    }, getUserByOrders(req, res) {
+        User.findByPk(req.params.id, {
+            include: [
+            {model: Order, include: [{model: Product, as: 'products', through: {attributes: []}}]} 
+        ]
+        })
+            .then(user => res.send(user))
+            .catch(err => {
+                console.error(err)
+                res.status(500).send({ message :'No se ha podido cargar el usuario'})
+            })
+    },
+    async logout(req, res) {
+        try {
+            await Token.destroy({
+                where: {
+                    [Op.and]: [
+                        { UserId: req.user.id },
+                        { token: req.headers.authorization }
+                    ]
+                }
+            });
+            res.send({ message: 'Usuario desconectado' })
+        } catch (error) {
+            console.log(error)
+            res.status(500).send({ message: 'Hubo un problema al realizar el logout' })
         }
     }
 
