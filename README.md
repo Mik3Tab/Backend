@@ -4,7 +4,7 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 
 # Ejercicios
 
- __Productos__
+ ## Productos
  
 · CRUD productos: ✅
 
@@ -20,7 +20,8 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 
 · Implementa validación a la hora de crear un producto para que se rellene todos los campos y si no se hace que devuelva un mensaje: ✅
 
- __Categorías__
+ ## Categorías
+ 
  
 · CRUD Categorías: ✅
 
@@ -30,13 +31,13 @@ Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes
 
 · Filtro para buscar categoría por nombre: ✅
 
-  __Pedidos__
+## Pedidos
   
 · Crea un endpoint para ver los pedidos junto a los productos que tienen: ✅
 
 · Crea un endpoint para crear pedidos: ✅
 
- __Usuarios__
+ ## Usuarios
  
 · Endpoint para registrar un usuario utilizando bcrypt: ✅
 
