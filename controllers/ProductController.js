@@ -1,4 +1,4 @@
-const {Product, Category, Sequelize} = require('../models/index');
+const {Product, Category, Sequelize, Order} = require('../models/index');
 const { Op } = Sequelize;
 
 const ProductController = {
@@ -20,12 +20,17 @@ const ProductController = {
         }catch (error){
             console.error('Ha habido un error');
         }
-    }, getAll(req,res){
-        Product.findAll()
+    }, 
+    getAll(req,res){
+        Product.findAll({
+            include: [
+                {model: Order, as: 'orders', through: {attributes: []}},Category
+            ]
+        })
         .then(products => res.send(products))
         .catch(err=>{
             console.error(err)
-            res.status(500).send({message: 'Ha habido un problema al cargar los productos.'})
+            res.status(500).send({message: 'Ha habido un problema al cargar los productos.'});
         })
     },
         getById(req,res){
