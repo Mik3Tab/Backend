@@ -3,6 +3,9 @@ const { Op } = Sequelize;
 
 const ProductController = {
     insert(req,res){
+        if(!req.body.name || !req.body.price || !req.body.CategoryId){
+            return res.status(400).json({msg:'Por favor rellene todos los campos del producto'})
+        }
         Product.create({...req.body})
         .then(product=>{
             res.send({ message: 'Producto creado', product})
