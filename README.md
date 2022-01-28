@@ -1,6 +1,6 @@
-# MySQL & Express Database 
+Backend eCommerce teclados mecánicos 
 
-Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí tienes un ejemplo visual del ejercicio.
+Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí abajo todos los puntos que cumple el ejercicio.
 
 # Ejercicios
 
