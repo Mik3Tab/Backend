@@ -1,4 +1,4 @@
-Backend eCommerce teclados mecánicos 
+# Backend eCommerce teclados mecánicos 
 
 Proyecto hecho con Sequelize, NodeJS, Express, Middleware y Bcrypt. Aquí abajo todos los puntos que cumple el ejercicio.
 
