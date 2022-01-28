@@ -68,7 +68,7 @@ Actualiza la repo remota para que apunte a tu repositorio: git remote set-url or
 * Paso a paso
 ```
     -> Access the main folder through console
-    -> Run npm run index
+    -> Run npm run project
 ```
 
 ## Authors 👷‍♂️
